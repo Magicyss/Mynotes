@@ -17,7 +17,7 @@ sudo tar -zxvf apache-tomcat-9.0.17.tar.gz -C /usr/lib/tomcat
 cd /usr/lib
 sudo chmod 777 -R tomcat
 ```
-进入/tomcat/apache-tomcat-8.5.9/bin，编辑文件 *startup.sh* ，在最后一行之前加入如下信息：
+进入/tomcat/apache-tomcat-9.0.17/bin，编辑文件 *startup.sh* ，在最后一行之前加入如下信息：
 ```shell
 #set java environment
 export JAVA_HOME=/usr/lib/jdk/jdk-12
