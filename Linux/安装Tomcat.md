@@ -72,6 +72,6 @@ sudo touch /etc/authbind/byport/80
 ```
 接下来再启动tomcat就可以访问到80的服务了:
 ```shell
-sude ./startup.sh
+sudo ./startup.sh
 sudo authbind --deep ./catalina.sh start
 ```
