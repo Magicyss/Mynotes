@@ -11,7 +11,7 @@
 [安装Mysql](https://github.com/Magicyss/Mynotes/blob/master/Linux/%E5%AE%89%E8%A3%85Mysql.md)  
 [安装Tomcat](https://github.com/Magicyss/Mynotes/blob/master/Linux/%E5%AE%89%E8%A3%85Tomcat.md)  
 [服务器HTTPS设置](https://github.com/Magicyss/Mynotes/blob/master/Linux/%E6%9C%8D%E5%8A%A1%E5%99%A8HTTPS%E8%AE%BE%E7%BD%AE.md) 
-## [My AI Tools] (https://github.com/Magicyss/Mynotes/tree/master/MyAITools)
+## [My AI Tools](https://github.com/Magicyss/Mynotes/tree/master/MyAITools)
 这里主要准备保存自己手写的基础机器学习模型，以防止部分比赛不允许使用sklearn等第三方库，主要使用的库有**numpy**和**pandas**。  
 目前已更新：
 >[线性回归](https://github.com/Magicyss/Mynotes/blob/master/MyAITools/LinearRegression.py)  
