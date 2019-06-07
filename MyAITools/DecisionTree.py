@@ -28,7 +28,7 @@ class DecisionTree():
         percent = {i:[] for i in set(feature[:,index])}  # 单个特征的所占比例
         for i in set(feature[:,index]):
             percent[i].extend([j/feature_count[i] for j in label_count[i].values()])
-        result={i:0.0for i in set(feature[:,index])}#记录结果，即单个特征的信息熵
+        result={i:0.0 for i in set(feature[:,index])}#记录结果，即单个特征的信息熵
         for i in set(feature[:,index]):
             for j in percent[i]:
                 if j != 0 and j != 1:
