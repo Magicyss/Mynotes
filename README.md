@@ -17,3 +17,4 @@
 >[线性回归](https://github.com/Magicyss/Mynotes/blob/master/MyAITools/LinearRegression.py)  
 [逻辑回归](https://github.com/Magicyss/Mynotes/blob/master/MyAITools/LogisticRegression.py)  
 [K-means聚类](https://github.com/Magicyss/Mynotes/blob/master/MyAITools/Kmeans.py)  
+[决策树](https://github.com/Magicyss/Mynotes/blob/master/MyAITools/DecisionTree.py)  
