@@ -26,6 +26,7 @@ tar -xvf Python-3.7.6.tgz
 
 ```shell
 mkdir /usr/local/python3
+cd Python-3.7.6
 ```
 
 编译（在解压的文件夹下）
@@ -37,7 +38,7 @@ mkdir /usr/local/python3
 安装（在解压的文件夹下 ）
 
 ```shell
-make&make install
+make & make install
 ```
 
 创建新版本软连接
