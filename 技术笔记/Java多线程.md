@@ -42,5 +42,74 @@
    Thread (ThreadGroup group, String name)
    Allocates a new Thread object .
 
-   10. 不要企图利用优先级来控制线程的运行，不稳定。
-   11. 
+   10. setDaemon需要放置在start之前，这个操作是设置守护线程，让父线程结束的时候顺带结束子线程，例如心跳检测时使用。
+
+   11. 不要企图利用优先级来控制线程的运行，不稳定。
+
+   12. join是让子线程完成之后才继续父线程。比如在线程B中调用了线程A的join()方法，直到线程A执行完毕后，才会继续执行线程B。
+
+   13. 优雅地关闭一个线程：
+
+       ```java
+       public class ThreadCloseGraceful {
+           private static class Worker extends Thread {
+               private volatile boolean start = true;
+               @Override
+               public void run() {
+                   while (start) {
+                       //TODO
+                   }
+               }
+               public void shutdown() {
+                   this.start = false;
+               }
+           }
+           public static void main(String[] args) {
+               Worker worker = new Worker();
+               worker.start();
+               try {
+                   Thread.sleep(10000);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+               worker.shutdown();
+           }
+       }
+       ```
+
+       ```java
+       public class ThreadCloseGraceful2 {
+           private static class Worker extends Thread {
+       
+               @Override
+               public void run() {
+                   while (true) {
+                       if (Thread.interrupted()) {
+                           break;
+                       }
+                   }
+                   //TODO
+               }
+           }
+           public static void main(String[] args) {
+               Worker worker = new Worker();
+               worker.start();
+       
+               try {
+                   Thread.sleep(3000);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+               worker.interrupt();
+           }
+       }
+       ```
+
+这两种方法在TODO中如果有会导致线程blocked的操作，就不能进入判断部分，这时直接打断就会有问题了。
+
+14. 强制打断线程：
+
+    将任务放置在子线程，设置子线程为守护线程，然后打断主线程
+
+15. 
+
