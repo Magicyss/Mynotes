@@ -111,5 +111,26 @@
 
     将任务放置在子线程，设置子线程为守护线程，然后打断主线程
 
-15. 
+15. 线程1持有锁a，想要锁b，线程2持有锁b，想要锁a，构成死锁。
 
+16. sleep和wait的区别
+
+sleep是Thread的方法，wait是Object的方法
+
+sleep不会释放锁，但是wait会释放当前锁，并将Object放到等待队列中
+
+sleep方法不需要同步，但是wait需要
+
+sleep方法不需要被唤醒，但是wait需要（wait（10）除外）
+
+17. 给程序添加Hook，用于做一些停止之后的工作，只要不是kill -9强杀就行。
+
+```java
+Runtime.getRuntime().addShutdownHook(new Thread(()->{
+	System.out.println("The application will be exit.");
+	notifyAndRelease();//做一些关闭后的操作
+}));
+```
+
+18. 
+19. 
